@@ -1,6 +1,7 @@
 import VueRouter from 'vue-router'
 import Layout from './layout/layout'
 import View from './components/view'
+import HelloWorld from './components/HelloWorld'
 import store from './store'
 import {authKey} from "./utils/auth"
 import LockLayout from './layout/lockLayout'
@@ -17,6 +18,10 @@ const routes = [
       {
         path: ':type/*',
         component: View
+      },
+      {
+        path: 'hello',
+        component: HelloWorld
       }
     ]
   },

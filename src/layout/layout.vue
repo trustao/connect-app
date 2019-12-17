@@ -30,7 +30,9 @@
                 </el-menu>
             </el-drawer>
             <el-main class="main">
-                <router-view></router-view>
+                <keep-alive :include="['viewer']">
+                    <router-view></router-view>
+                </keep-alive>
             </el-main>
         </el-container>
     </el-container>

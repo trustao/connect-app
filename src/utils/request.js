@@ -61,3 +61,10 @@ export function loginCheck(key) {
     router.push('/login')
   })
 }
+
+export function customR (data) {
+  const keyInfo = store.state.key || {}
+  return request('/r', {
+    l: aesEncrypt(JSON.stringify(data), keyInfo.key || ''),
+  })
+}
