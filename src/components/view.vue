@@ -1,5 +1,5 @@
 <template>
-    <div v-loading="loading">
+    <div v-loading="loading" style="padding-bottom: 40px;">
         <h1>{{pageData.title}}</h1>
         <el-collapse v-model="activeNames">
             <el-collapse-item v-if="pageData.info" title="介绍" name="1">
@@ -20,7 +20,7 @@
                     </div>
                 </div>
             </el-collapse-item>
-            <el-collapse-item v-if="pageData.info && pageData.info.images && pageData.info.images.length" title="图片" name="1">
+            <el-collapse-item v-if="pageData.info && pageData.info.images && pageData.info.images.length" title="图片" name="2">
                 <el-image v-for="(e,i) in pageData.info.images" :key="i" :src="e" class="img"></el-image>
             </el-collapse-item>
             <el-collapse-item v-if="pageData.magnetic && pageData.magnetic.length" title="下载" name="3">
