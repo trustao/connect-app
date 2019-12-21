@@ -21,13 +21,15 @@
                     </el-input>
                     <p></p>
                 </div>
-                <el-menu :default-active="$route.fullPath" class="el-menu-vertical-demo" router>
-                    <el-menu-item v-for="(path) in routes" :key="path" :index="path">
-                        <i class="el-icon-menu"></i>
-                        <span slot="title">{{path}}</span>
-                        <i class="el-icon-close" @click.stop="remove(path)"></i>
-                    </el-menu-item>
-                </el-menu>
+                <div class="sc">
+                    <el-menu :default-active="$route.fullPath" class="el-menu-vertical-demo" router>
+                        <el-menu-item v-for="(path) in routes" :key="path" :index="path">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">{{path}}</span>
+                            <i class="el-icon-close" @click.stop="remove(path)"></i>
+                        </el-menu-item>
+                    </el-menu>
+                </div>
             </el-drawer>
             <el-main class="main">
                 <keep-alive :include="['viewer']">
@@ -142,6 +144,11 @@
         background: #42b983;
     }
 
+    .sc {
+        height: 100%;
+        max-height: 100vh;
+        overflow-y: auto;
+    }
     .el-icon-close {
         float: right;
         margin-top: 16px;
